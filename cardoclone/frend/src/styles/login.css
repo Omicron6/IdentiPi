@@ -1,0 +1,448 @@
+.login-root {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #050814 0%, #050b16 50%, #0A0F1F 100%);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-orbits {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.neon-balls {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* above orbits, below the login card (card z-index:2) */
+  pointer-events: none;
+  overflow: visible;
+}
+
+.neon-ball {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(0px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  opacity: 0.9;
+}
+
+.neon-ball::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.ball-1 {
+  width: 18px;
+  height: 18px;
+  left: 12%;
+  top: 18%;
+  background: radial-gradient(circle at 35% 30%, #6A4BFF 0%, rgba(106,75,255,0.15) 45%, transparent 70%);
+  box-shadow: 0 0 18px rgba(106,75,255,0.9), 0 0 32px rgba(46,139,255,0.12);
+  animation: move1 11s ease-in-out infinite alternate, blink 6.5s ease-in-out infinite;
+}
+
+.ball-2 {
+  width: 22px;
+  height: 22px;
+  left: 78%;
+  top: 24%;
+  background: radial-gradient(circle at 35% 30%, #2E8BFF 0%, rgba(46,139,255,0.14) 45%, transparent 70%);
+  box-shadow: 0 0 20px rgba(46,139,255,0.95), 0 0 36px rgba(46,139,255,0.16);
+  animation: move2 13s ease-in-out infinite alternate, blink 7.2s ease-in-out infinite;
+}
+
+.ball-3 {
+  width: 14px;
+  height: 14px;
+  left: 42%;
+  top: 68%;
+  background: radial-gradient(circle at 30% 30%, #00E1D4 0%, rgba(0,225,212,0.14) 45%, transparent 70%);
+  box-shadow: 0 0 14px rgba(0,225,212,0.9), 0 0 28px rgba(0,225,212,0.12);
+  animation: move3 9s ease-in-out infinite alternate, blink 5.8s ease-in-out infinite;
+}
+
+.ball-4 {
+  width: 26px;
+  height: 26px;
+  left: 22%;
+  top: 54%;
+  background: radial-gradient(circle at 35% 30%, #8C63FF 0%, rgba(140,99,255,0.12) 45%, transparent 70%);
+  box-shadow: 0 0 22px rgba(140,99,255,0.9), 0 0 40px rgba(140,99,255,0.12);
+  animation: move4 15s ease-in-out infinite alternate, blink 8s ease-in-out infinite;
+}
+
+.ball-5 {
+  width: 16px;
+  height: 16px;
+  left: 62%;
+  top: 12%;
+  background: radial-gradient(circle at 35% 30%, #4BD1FF 0%, rgba(75,209,255,0.12) 45%, transparent 70%);
+  box-shadow: 0 0 16px rgba(75,209,255,0.9), 0 0 30px rgba(75,209,255,0.12);
+  animation: move5 12s ease-in-out infinite alternate, blink 6.8s ease-in-out infinite;
+}
+
+.ball-6 {
+  width: 20px;
+  height: 20px;
+  left: 86%;
+  top: 76%;
+  background: radial-gradient(circle at 35% 30%, #A3B0FF 0%, rgba(163,176,255,0.12) 45%, transparent 70%);
+  box-shadow: 0 0 18px rgba(163,176,255,0.9), 0 0 34px rgba(163,176,255,0.12);
+  animation: move6 14s ease-in-out infinite alternate, blink 7.6s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0.18; }
+  40% { opacity: 0.9; }
+  60% { opacity: 0.35; }
+  100% { opacity: 0.18; }
+}
+
+@keyframes move1 {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(18px, -10px, 0); }
+  50% { transform: translate3d(-12px, 8px, 0); }
+  75% { transform: translate3d(6px, 14px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes move2 {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-22px, 16px, 0); }
+  50% { transform: translate3d(14px, -20px, 0); }
+  75% { transform: translate3d(-8px, 6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes move3 {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(10px, 12px, 0); }
+  50% { transform: translate3d(-16px, -8px, 0); }
+  75% { transform: translate3d(6px, 4px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes move4 {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(24px, -18px, 0); }
+  50% { transform: translate3d(-20px, 22px, 0); }
+  75% { transform: translate3d(10px, -6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes move5 {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-14px, 20px, 0); }
+  50% { transform: translate3d(12px, -14px, 0); }
+  75% { transform: translate3d(-6px, -4px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes move6 {
+  0% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-18px, -12px, 0); }
+  50% { transform: translate3d(16px, 10px, 0); }
+  75% { transform: translate3d(-8px, 6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.neon-orbit {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(16px);
+}
+
+.orbit-1 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle at 30% 30%, #00E1D4 0%, transparent 70%);
+  opacity: 0.24;
+  top: -80px;
+  left: -100px;
+  animation: floatOrbit 32s ease-in-out infinite;
+}
+
+.orbit-2 {
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle at 30% 30%, #2E8BFF 0%, transparent 70%);
+  opacity: 0.2;
+  bottom: -60px;
+  right: -80px;
+  animation: floatOrbit2 38s ease-in-out infinite;
+  animation-delay: -8s;
+}
+
+.orbit-3 {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 30% 30%, #6A4BFF 0%, transparent 70%);
+  opacity: 0.18;
+  top: 40%;
+  right: -120px;
+  animation: floatOrbit3 40s ease-in-out infinite;
+  animation-delay: -12s;
+}
+
+.orbit-4 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 30% 30%, #00E1D4 0%, transparent 70%);
+  opacity: 0.22;
+  top: 20%;
+  left: -60px;
+  animation: floatOrbit 35s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+.orbit-5 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle at 30% 30%, #2E8BFF 0%, transparent 70%);
+  opacity: 0.19;
+  bottom: 10%;
+  right: 10%;
+  animation: floatOrbit2 36s ease-in-out infinite;
+  animation-delay: -15s;
+}
+
+@keyframes floatOrbit {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(50px, -40px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes floatOrbit2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-45px, 35px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes floatOrbit3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-60px, -50px, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.login-card {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #0D111A 0%, #111827 100%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 48px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.65), 0 0 22px rgba(0, 0, 0, 0.85);
+  outline: 1px solid rgba(255,255,255,0.03);
+}
+
+/* remove neon border gradients and center glow - keep visuals minimal */
+
+/* ensure actual content stays above visual effects */
+.login-card * {
+  position: relative;
+  z-index: 10;
+}
+
+
+.login-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.logo-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 6px 16px rgba(46, 139, 255, 0.15);
+  transition: transform 150ms ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.02);
+}
+
+.login-card h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.login-card-header h2 {
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.login-card-header p {
+  font-size: 14px;
+  color: #A6B2CC;
+}
+
+.login-card > .text-muted {
+  margin-bottom: 36px;
+  font-size: 15px;
+  color: #9FA8C6;
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #D4DFFE;
+  text-transform: capitalize;
+}
+
+.form-group input {
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  background: #111827;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #E6EDF9;
+  transition: all 0.15s ease;
+}
+
+.form-group input:hover {
+  border-color: rgba(255,255,255,0.10);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2E8BFF;
+  box-shadow: 0 0 6px rgba(46,139,255,0.18);
+}
+
+.form-group input::placeholder {
+  color: #6C7692;
+}
+
+.login-button {
+  width: 100%;
+  padding: 13px 16px;
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #2E8BFF;
+  color: white;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+  box-shadow: 0 6px 18px rgba(46,139,255,0.12);
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(46,139,255,0.14);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.login-tagline {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(46,139,255,0.06);
+  text-align: center;
+}
+
+.login-tagline p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #E4EBFB;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .login-root {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .login-main {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+
+  .login-neon-circle {
+    display: none;
+  }
+
+  .login-card-header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+}

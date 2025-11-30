@@ -1,0 +1,28 @@
+contract AgeVerifier {
+
+    // Import the verification key generated from Circom+SnarkJS
+    const VERIFICATION_KEY : VerificationKey = load("verifier_key.json");
+
+    // Private function to validate the ZK proof
+    private fn verify_age_proof(
+        proof: Groth16Proof,
+        publicSignals: PublicSignals
+    ) -> Bool {
+
+        // Midnight ZK verification
+        let result = groth16_verify(VERIFICATION_KEY, proof, publicSignals);
+
+        assert(result == true, "Invalid ZK proof");
+
+        return true;
+    }
+
+    // Public endpoint for verifiers / service providers
+    public fn is_over_18(
+        proof: Groth16Proof,
+        publicSignals: PublicSignals
+    ) -> Bool {
+        let valid = verify_age_proof(proof, publicSignals);
+        return valid;
+    }
+}

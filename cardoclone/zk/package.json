@@ -1,0 +1,12 @@
+{
+  "name": "identipi-zk",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "snarkjs": "^0.7.5"
+  },
+  "scripts": {
+    "prove": "node scripts/proveAge.js",
+    "verify": "node scripts/verifyProof.js"
+  }
+}
